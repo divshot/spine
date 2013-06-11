@@ -5,7 +5,11 @@ Queue  = $({})
 
 Ajax =
   getURL: (object) ->
-    object.url?() or object.url
+    url = object.url?() or object.url
+    if url.indexOf(Model.host) isnt 0
+      url
+    else
+      Model.host + url
 
   getCollectionURL: (object) ->
     if object

@@ -6,7 +6,7 @@ Queue  = $({})
 Ajax =
   getURL: (object) ->
     url = object.url?() or object.url
-    if url.indexOf(Model.host) isnt 0
+    if url.indexOf(Model.host) isnt -1
       url
     else
       Model.host + url
